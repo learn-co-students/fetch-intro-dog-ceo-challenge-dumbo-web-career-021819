@@ -44,22 +44,22 @@ fetch(imgUrl)
     }
   })
 
-  document.addEventListener('change', (event) => {
-    dogListUl.innerHTML = ''
-    let usersOption = event.target.value
-      fetch(breedUrl)
-        .then((response) => {
-          return response.json()
-        }).then((object) => {
-          let messageValues = Object.values(object)[1]
-          let breedKeys = Object.keys(messageValues)
-          breedKeys.forEach((breed) => {
-            if (breed.startsWith(usersOption)) {
-              dogListUl.innerHTML += createDogBreedListItem(breed)}
-          })
-        })
-      }
-    )
+  // document.addEventListener('change', (event) => {
+  //   dogListUl.innerHTML = ''
+  //   let usersOption = event.target.value
+  //     fetch(breedUrl)
+  //       .then((response) => {
+  //         return response.json()
+  //       }).then((object) => {
+  //         let messageValues = Object.values(object)[1]
+  //         let breedKeys = Object.keys(messageValues)
+  //         breedKeys.forEach((breed) => {
+  //           if (breed.startsWith(usersOption)) {
+  //             dogListUl.innerHTML += createDogBreedListItem(breed)}
+  //         })
+  //       })
+  //     }
+  //   )
 
   document.addEventListener('change', (event) => {
     dogListUl.innerHTML = ''
