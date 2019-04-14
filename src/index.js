@@ -63,6 +63,7 @@ fetch(imgUrl)
 
   document.addEventListener('change', (event) => {
     dogListUl.innerHTML = ''
+
     let usersOption = event.target.value
 
     fetch(breedUrl)
@@ -71,8 +72,8 @@ fetch(imgUrl)
       }).then((object) => {
         let breedArray = Object.keys(object.message)
         breedArray.forEach((dogBreed) => {
-          if (breed.startsWith(usersOption)) {
-            dogListUl.innerHTML += createDogBreedListItem(breed)}
+          if (dogBreed.startsWith(usersOption)) {
+            dogListUl.innerHTML += createDogBreedListItem(dogBreed)}
         })
       })
     })
